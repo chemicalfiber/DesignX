@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>需求提交页面-DesignX网站设计工作室</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- 网站图标 -->
+    <link href="images/favicon.png" rel="icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google字体引用 -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:Lato:300,400,700,300italic,400italic|Raleway:400,300,700"
+          rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="static-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static-lib/icomoon/icomoon.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-offset="58" data-target="#navbar-main">
+<div id="navbar-main">
+    <!-- 固定不动的导航栏 -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-menu" style="font-size:30px; color: #ffffff"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html">回到首页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 900px;"></div>
+<div id="locatedInfo"></div>
+
+<div id="copyrights">
+    <div class="container">
+        <p>
+            &copy; Copyrights <strong>DesignX</strong>. All Rights Reserved
+        </p>
+        <div id="allMap"></div>
+    </div>
+</div>
+<!-- 版权页脚 -->
+
+<script src="static-lib/jquery/jquery.min.js"></script>
+<script src="static-lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="static-lib/easing/easing.min.js"></script>
+<script src="static-lib/main.js"></script>
+
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=0A5bc3c4fb543c8f9bc54b77bc155724"></script>
+<script>
+    function getMyPosition(){
+        if(window.navigator.geolocation){
+            alert("正在获取您的位置...");
+            navigator.geolocation.getCurrentPosition(success,failed);
+        }else{
+            alert("当前浏览器不支持GeoLocation！")
+        }
+    }
+    function success(p){
+        var jd = p.coords.longitude;	// 经度
+        var wd = p.coords.latitude;		// 纬度
+        alert(jd + " , " + wd);
+        // 百度地图API功能
+        var map = new BMap.Map("allMap");
+        var point = new BMap.Point(jd, wd);
+        var gc = new BMap.Geocoder();
+        gc.getLocation(point, function (rs) {
+            var addComp = rs.addressComponents;
+            alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+        });
+    };
+    function failed(){
+        alert("获取位置失败！");
+    }
+    getMyPosition();
+</script>
+</body>
+</html>
