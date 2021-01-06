@@ -1,534 +1,326 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>DesignX网站设计工作室</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- 网站图标 -->
-  <link href="images/favicon.png" rel="icon">
-  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
-  <!-- Google字体引用 -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="js/icomoon/icomoon.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>DesignX网站设计工作室</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- 网站图标 -->
+    <link href="images/favicon.png" rel="icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google字体引用 -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:Lato:300,400,700,300italic,400italic|Raleway:400,300,700"
+          rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="static-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static-lib/icomoon/icomoon.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-offset="58" data-target="#navbar-main">
 <div id="navbar-main">
-  <!-- Fixed navbar -->
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
-        </button>
-        <a class="navbar-brand hidden-xs hidden-sm smoothscroll" href="#home"><span class="icon icon-shield" style="font-size:18px; color:#3498db;"></span></a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#home" class="smoothscroll">Home</a></li>
-          <li> <a href="#about" class="smoothscroll"> About</a></li>
-          <li> <a href="#services" class="smoothscroll"> Services</a></li>
-          <li> <a href="#team" class="smoothscroll"> Team</a></li>
-          <li> <a href="#portfolio" class="smoothscroll"> Portfolio</a></li>
-          <li> <a href="#blog" class="smoothscroll"> Blog</a></li>
-          <li> <a href="#contact" class="smoothscroll"> Contact</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
+    <!-- 固定不动的导航栏 -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-menu" style="font-size:30px; color:#ffffff;"></span><!--汉堡菜单小图标-->
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#home" class="smoothscroll">Home</a></li>
+                    <li><a href="#product" class="smoothscroll"> 作品</a></li>
+                    <li><a href="#services" class="smoothscroll"> 服务</a></li>
+                    <li><a href="#team" class="smoothscroll"> 团队</a></li>
+                    <li><a href="#contact" class="smoothscroll"> 联系我们</a></li>
+                </ul>
+                <!--右边的注册和登录-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./user.html" target="_blank"> 登录 / 注册</a></li><!--这里"可能"要改成Servlet路径-->
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-<!-- ==== HEADERWRAP ==== -->
+<!-- ==== 宣传slogan ==== -->
 <div id="home"></div>
 <div id="headerwrap" name="home">
-  <header class="clearfix">
-    <h1><span class="icon icon-shield"></span></h1>
-    <p>A Bootstrap One Page Template</p>
-    <p>Exclusive for TemplateMag</p>
-  </header>
+    <header class="clearfix">
+        <h1><img src="images/logo.png" alt="" width="140px" height="140px"></h1>
+        <p>DesignX</p>
+        <p>网站设计工作室</p>
+    </header>
 </div>
-<!-- /headerwrap -->
 
-<!-- ==== GREYWRAP ==== -->
+<!-- ==== 特色 ==== -->
 <div id="greywrap">
-  <div class="row">
-    <div class="col-lg-4 callout">
-      <span class="icon icon-stack"></span>
-      <h2>Bootstrap 3</h2>
-      <p>Shield Theme is powered by Bootstrap 3. The incredible Mobile First Framework is the best option to run your website. </p>
-    </div>
-    <!-- col-lg-4 -->
+    <div class="row">
+        <div class="col-lg-4 callout">
+            <br>
+            <span class="icon icon-stack"></span>
+            <h2>Bootstrap 3</h2><br>
+            <p>采用Bootstrap 3框架支持，移动端优先的设计理念使网站更优雅</p>
+        </div>
 
-    <div class="col-lg-4 callout">
-      <span class="icon icon-eye"></span>
-      <h2>Retina Ready</h2>
-      <p>You can use this theme with your iPhone, iPad or MacBook Pro. This theme is retina ready and that is awesome. </p>
-    </div>
-    <!-- col-lg-4 -->
+        <div class="col-lg-4 callout">
+            <br>
+            <span class="icon icon-earth"></span>
+            <h2>跨平台</h2><br>
+            <p>任何安装支持现代HTML标准浏览器的设备都可以浏览，无障碍</p>
+        </div>
 
-    <div class="col-lg-4 callout">
-      <span class="icon icon-heart"></span>
-      <h2>Crafted with Love</h2>
-      <p>We don't make sites, we craft themes with love & passion. That is our most valued secret. We only do thing that we love. </p>
+        <div class="col-lg-4 callout">
+            <br>
+            <span class="icon icon-eye"></span>
+            <h2>支持Retina</h2><br>
+            <p>100%适配iPhone、iPad和Mac的"视网膜屏幕"（Retina Display）</p>
+        </div>
     </div>
-    <!-- col-lg-4 -->
-  </div>
-  <!-- row -->
 </div>
-<!-- greywrap -->
 
-<!-- ==== ABOUT ==== -->
-<div class="container" id="about" name="about">
-  <div class="row white">
-    <br>
-    <h1 class="centered">A LITTLE ABOUT OUR AGENCY</h1>
-    <hr>
-
-    <div class="col-lg-6">
-      <p>We believe ideas come from everyone, everywhere. In fact, at TemplateMag, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft.
-        These truths drive us, motivate us, and ultimately help us redefine the power of design. We’re big believers in doing right by our neighbors. After all, we grew up in the Twin Cities and we believe this place has much to offer. So we do what
-        we can to support the community we love.</p>
-    </div>
-    <!-- col-lg-6 -->
-
-    <div class="col-lg-6">
-      <p>Over the past four years, we’ve provided more than $1 million in combined cash and pro bono support to Way to Grow, an early childhood education and nonprofit organization. Other community giving involvement throughout our agency history includes
-        pro bono work for more than 13 organizations, direct giving, a scholarship program through the Minneapolis College of Art & Design, board memberships, and ongoing participation in the Keystone Club, which gives five percent of our company’s
-        earnings back to the community each year.</p>
-    </div>
-    <!-- col-lg-6 -->
-  </div>
-  <!-- row -->
-</div>
-<!-- container -->
-
-<!-- ==== SECTION DIVIDER1 -->
+<!-- ==== 过渡-岂止设计 -->
 <section class="section-divider textdivider divider1">
-  <div class="container">
-    <h1>DESIGN EXPAND BOUNDARIES</h1>
-    <hr>
-    <p>To achieve real change, we have to expand boundaries. Because the Wild West of what-could-be is unexplored but rife with opportunity.</p>
-  </div>
-  <!-- container -->
+    <div class="container">
+        <h1>岂止设计</h1>
+        <hr>
+        <p>突破边界，实现变革。存在于互联网蓝海市场中的机遇在等待着你。</p>
+    </div>
 </section>
-<!-- section -->
 
-
-<!-- ==== SERVICES ==== -->
-<div class="container" id="services" name="services">
-  <br>
-  <br>
-  <div class="row">
-    <h2 class="centered">ONE BRAND, ONE VOICE.</h2>
-    <hr>
+<!-- ==== 我们的作品 ==== -->
+<div class="container" id="product" name="product">
     <br>
-    <div class="col-lg-offset-2 col-lg-8">
-      <p>Employees and consumers. Two halves of a brand’s entirety, the whole of a brand’s audience. Sometimes these two halves have very different viewpoints, creating a weak spot in the brand story. Weakness tarnishes credibility. Brands that aren’t
-        credible aren’t viable.
-      </p>
-      <p>We squash weakness by designing the whole brand story. It’s crafted around the truism held by employees and consumers to create an experience that connects from the inside out.</p>
-      <p>By being true to the brand we represent, we elevate the audiences’ relationship to it. Like becomes love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within, creating a whole story the audience embraces. That’s
-        when the brand can truly flex its muscles.</p>
+    <div class="row">
+        <br>
+        <h1 class="centered">作品展示</h1>
+        <hr>
+        <p><a href="./list.html" style="float: right;color: #8c8c8c;">查看更多>></a></p><!--「list.html应该是动态的，请知晓」-->
+        <br>
     </div>
-    <!-- col-lg -->
-  </div>
-  <!-- row -->
+    <!-- ====这里的作品图片是从后端动态查询的，后端应该填充代码的位置已经做注释，请留意==== -->
+    <div class="container">
+        <div class="row">
+            <!-- 作品图片 1 -->
+            <div class="col-md-5">
+                <div class="grid mask">
+                    <figure>
+                        <img class="img-responsive" src="images/portfolio/folio01.jpg" alt=""><!--在href处书写查询到的第一张图片的地址代码-->
+                        <figcaption>
+                            <h5>DASHBOARD</h5><!--在此书写查询到的第一个作品标题代码-->
+                            <a href="#" class="btn btn-primary btn-lg">查看</a><!-- 在href处书写查询到的第一个作品地址代码 -->
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
 
-  <div class="row">
-    <h2 class="centered">MOBILE FIRST THINKING, ALWAYS.</h2>
-    <hr>
-    <br>
-    <div class="col-lg-offset-2 col-lg-8">
-      <img class="img-responsive" src="images/iphone.png" alt="">
+            <!-- 作品图片 2 -->
+            <div class="col-md-5 pull-right">   <!-- 使用Bootstrap的「pull-right」类靠右对齐 -->
+                <div class="grid mask">
+                    <figure>
+                        <img class="img-responsive" src="images/portfolio/folio02.jpg" alt=""><!--在href处书写查询到的第二张图片的地址代码-->
+                        <figcaption>
+                            <h5>UI DESIGN</h5><!--在此书写查询到的第二个作品标题代码-->
+                            <a href="#" class="btn btn-primary btn-lg">查看</a><!-- 在href处书写查询到的第二个作品地址代码 -->
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- col -->
-  </div>
-  <!-- row -->
 </div>
-<!-- container -->
 
+<!-- ==== 轮播图，此处的图片是静态的，后端不必担心 ==== -->
+<div class="container" id="Carousel" name="Carousel">
+    <div class="row" style="height: 400px;">
+        <br>
+        <h1 class="centered">还有这些...</h1>
+        <hr>
 
-<!-- ==== SECTION DIVIDER2 -->
+        <!--等待实现的轮播图代码-->
+    </div>
+</div>
+
+<!-- ==== 过渡-设计是一种互动 -->
 <section class="section-divider textdivider divider2">
-  <div class="container">
-    <h1>DESIGN IS AN INTERACTION</h1>
-    <hr>
-    <p>To develop a deeper and more meaningful connection with consumers, we believe design must invite them to take part in the conversation.</p>
-  </div>
-  <!-- container -->
+    <div class="container">
+        <h1>设计是一种互动</h1>
+        <hr>
+        <p>为了与消费者建立更深入、更有意义的联系，我们认为设计必须邀请他们参与对话。</p>
+    </div>
 </section>
-<!-- section -->
 
-<!-- ==== TEAM MEMBERS ==== -->
-<div class="container" id="team" name="team">
-  <br>
-  <div class="row white centered">
-    <h1 class="centered">MEET OUR AWESOME TEAM</h1>
-    <hr>
+<!-- ==== 服务 ==== -->
+<div class="container" id="services" name="services">
     <br>
     <br>
-    <div class="col-lg-3 centered">
-      <img class="img img-circle" src="images/team/team01.jpg" height="120px" width="120px" alt="">
-      <br>
-      <h4><b>Mike Arney</b></h4>
-      <a href="#" class="icon icon-twitter"></a>
-      <a href="#" class="icon icon-facebook"></a>
-      <a href="#" class="icon icon-flickr"></a>
-      <p>Mike combines an expert technical knowledge with a real eye for design. Working with clients from a wide range of industries, he fully understands client objectives when working on a project, large or small.</p>
-    </div>
-    <!-- col-lg-3 -->
-
-    <div class="col-lg-3 centered">
-      <img class="img img-circle" src="images/team/team02.jpg" height="120px" width="120px" alt="">
-      <br>
-      <h4><b>Tim Davies</b></h4>
-      <a href="#" class="icon icon-twitter"></a>
-      <a href="#" class="icon icon-facebook"></a>
-      <a href="#" class="icon icon-flickr"></a>
-      <p>Tim is an experienced marcoms practitioner and manages projects from inception to delivery. He understands the synergy between great design and commercial effectiveness which shines through on every project.</p>
-    </div>
-    <!-- col-lg-3 -->
-
-    <div class="col-lg-3 centered">
-      <img class="img img-circle" src="images/team/team03.jpg" height="120px" width="120px" alt="">
-      <br>
-      <h4><b>Michele Lampa</b></h4>
-      <a href="#" class="icon icon-twitter"></a>
-      <a href="#" class="icon icon-facebook"></a>
-      <a href="#" class="icon icon-flickr"></a>
-      <p>Be a creative director is a hard task, but Michele loves what she does. Her combination of knowledge and expertise is an important pillar in our agency.</p>
-    </div>
-    <!-- col-lg-3 -->
-
-    <div class="col-lg-3 centered">
-      <img class="img img-circle" src="images/team/team04.jpg" height="120px" width="120px" alt="">
-      <br>
-      <h4><b>Jaye Smith</b></h4>
-      <a href="#" class="icon icon-twitter"></a>
-      <a href="#" class="icon icon-facebook"></a>
-      <a href="#" class="icon icon-flickr"></a>
-      <p>Jaye began making websites when animated logos and scrolling text were cool, but has since found a love for simplicity, creating websites that are a pleasure to browse. Monkey Island Fan.</p>
-    </div>
-    <!-- col-lg-3 -->
-
-  </div>
-  <!-- row -->
-</div>
-<!-- container -->
-
-<!-- ==== GREYWRAP ==== -->
-<div id="greywrap">
-  <div class="container">
     <div class="row">
-      <div class="col-lg-8 centered">
-        <img class="img-responsive" src="images/macbook.png" align="">
-      </div>
-      <div class="col-lg-4">
-        <h2>We Are Hiring!</h2>
-        <p>Do you want to be one of use? Sure you want, because we are an awesome team!. Here we work hard every day to craft pixel perfect sites.</p>
-        <p><a class="btn btn-success">Contact Us</a></p>
-      </div>
+        <h2 class="centered">一个品牌，一种声音</h2>
+        <hr>
+        <br>
+        <div class="col-lg-offset-2 col-lg-8">
+            <p>品牌方和消费者，是品牌故事上最重要的两环。有时，他们两者的观点可能会不同，这便在品牌出现了一个弱点。这个弱点会损害品牌的形象。</p>
+            <p>我们通过设计整个品牌故事来消除弱点。它围绕着品牌方和消费者的思想精心打造，以创造一种由内而外的联系体验。</p>
+            <p>通过忠于我们所代表的品牌，我们提升了受众与品牌的关系。让品牌受众由喜欢变成爱、变为忠诚。我们看到品牌从内部开花，创造了一个完整的、受消费者喜爱的故事。这个时候，这个品牌才能真正发挥自己的力量。</p>
+        </div>
     </div>
-    <!-- row -->
-  </div>
-  <br>
-  <br>
-</div>
-<!-- greywrap -->
 
-<!-- ==== SECTION DIVIDER3 -->
+    <div class="row">
+        <h2 class="centered">任何时候，移动优先</h2>
+        <hr>
+        <br>
+        <div class="col-lg-offset-2 col-lg-8">
+            <p>随着智能手机硬件的发展以及移动互联网时代的到来，我们将网站设计的重心放在了移动端。打造「移动优先，兼顾PC」的网站风格。</p>
+            <img class="img-responsive" src="images/iphone.png" alt="" width="65%" height="65%" style="margin: 0 auto">
+        </div>
+    </div>
+</div>
+
+<!-- ==== 过渡-设计是一种解决方案 -->
 <section class="section-divider textdivider divider3">
-  <div class="container">
-    <h1>DESIGN SOLVE PROBLEMS</h1>
-    <hr>
-    <p>From the purely practical to the richly philosophical, design is the solution to a host of challenges.</p>
-  </div>
-  <!-- container -->
+    <div class="container">
+        <h1>设计是一种解决方案</h1>
+        <hr>
+        <p>从纯粹的实用主义到丰富的哲学思考，设计都是一系列挑战的解决方案</p>
+    </div>
 </section>
-<!-- section -->
 
-<!-- ==== PORTFOLIO ==== -->
-<div class="container" id="portfolio" name="portfolio">
-  <br>
-  <div class="row">
+<!-- ==== 团队成员，如果想自己的介绍丰富点，记得跟我说 ==== -->
+<div class="container" id="team" name="team">
     <br>
-    <h1 class="centered">WE CREATE COOL STUFF</h1>
-    <hr>
-    <br>
-    <br>
-  </div>
-  <!-- /row -->
-  <div class="container">
-    <div class="row">
-
-      <!-- PORTFOLIO IMAGE 1 -->
-      <div class="col-md-4 ">
-        <div class="grid mask">
-          <figure>
-            <img class="img-responsive" src="images/portfolio/folio01.jpg" alt="">
-            <figcaption>
-              <h5>DASHBOARD</h5>
-              <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-            </figcaption>
-            <!-- /figcaption -->
-          </figure>
-          <!-- /figure -->
+    <div class="row white centered">
+        <h1 class="centered">我们的团队</h1>
+        <hr>
+        <br>
+        <br>
+        <div class="col-lg-2 centered">
+            <img class="img img-circle" src="images/team/chemicalfiber.jpg" height="120px" width="120px" alt="">
+            <br>
+            <h4><b>chemicalfiber</b></h4>
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="https://github.com/chemicalfiber" class="icon icon-github" target="_blank"></a>
+            <p>项目小组组长，前端页面设计</p>
         </div>
-        <!-- /grid-mask -->
-      </div>
-      <!-- /col -->
 
-
-      <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-                            a modal for each of your projects. -->
-
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Project Title</h4>
-            </div>
-            <div class="modal-body">
-              <p><img class="img-responsive" src="images/portfolio/folio01.jpg" alt=""></p>
-              <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
-              <p><b><a href="#">Visit Site</a></b></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
+        <div class="col-lg-2 centered">
+            <img class="img img-circle" src="images/team/extreme-sh.jpeg" height="120px" width="120px" alt="">
+            <br>
+            <h4><b>Extreme-SH</b></h4>
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="https://github.com/Extreme-SH" class="icon icon-github" target="_blank"></a>
+            <p>后端功能设计</p>
         </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
 
-
-      <!-- PORTFOLIO IMAGE 2 -->
-      <div class="col-md-4">
-        <div class="grid mask">
-          <figure>
-            <img class="img-responsive" src="images/portfolio/folio02.jpg" alt="">
-            <figcaption>
-              <h5>UI DESIGN</h5>
-              <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-            </figcaption>
-            <!-- /figcaption -->
-          </figure>
-          <!-- /figure -->
+        <div class="col-lg-2 centered">
+            <img class="img img-circle" src="images/team/miss-ice.jpeg" height="120px" width="120px" alt="">
+            <br>
+            <h4><b>Miss-ice0901</b></h4>
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="https://github.com/Miss-ice0901" class="icon icon-github" target="_blank"></a>
+            <p>数据库设计</p>
         </div>
-        <!-- /grid-mask -->
-      </div>
-      <!-- /col -->
 
-      <!-- PORTFOLIO IMAGE 3 -->
-      <div class="col-md-4">
-        <div class="grid mask">
-          <figure>
-            <img class="img-responsive" src="images/portfolio/folio03.jpg" alt="">
-            <figcaption>
-              <h5>ANDROID PAGE</h5>
-              <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-            </figcaption>
-            <!-- /figcaption -->
-          </figure>
-          <!-- /figure -->
+        <div class="col-lg-2 centered">
+            <img class="img img-circle" src="images/team/sanqi0813.jpeg" height="120px" width="120px" alt="">
+            <br>
+            <h4><b>sanqi0813</b></h4>
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="https://github.com/sanqi0813" class="icon icon-github" target="_blank"></a>
+            <p>后端功能实现</p>
         </div>
-        <!-- /grid-mask -->
-      </div>
-      <!-- /col -->
+
+        <div class="col-lg-2 centered">
+            <img class="img img-circle" src="images/team/shadow01.png" height="120px" width="120px" alt="">
+            <br>
+            <h4><b>Shadow-01</b></h4>
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="https://github.com/1124925841" class="icon icon-github" target="_blank"></a>
+            <p>后端功能实现</p>
+        </div>
+
+        <div class="col-lg-2 centered">
+            <img class="img img-circle" src="images/team/zerozeroSeven.jpeg" height="120px" width="120px" alt="">
+            <br>
+            <h4><b>zerozeroSeven007</b></h4>
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="https://github.com/zerozeroSeven007" class="icon icon-github" target="_blank"></a>
+            <p>数据库设计</p>
+        </div>
     </div>
-    <!-- /row -->
-
-    <!-- PORTFOLIO IMAGE 4 -->
-    <div class="row">
-      <div class="col-md-4 ">
-        <div class="grid mask">
-          <figure>
-            <img class="img-responsive" src="images/portfolio/folio04.jpg" alt="">
-            <figcaption>
-              <h5>PROFILE</h5>
-              <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-            </figcaption>
-            <!-- /figcaption -->
-          </figure>
-          <!-- /figure -->
-        </div>
-        <!-- /grid-mask -->
-      </div>
-      <!-- /col -->
-
-      <!-- PORTFOLIO IMAGE 5 -->
-      <div class="col-md-4">
-        <div class="grid mask">
-          <figure>
-            <img class="img-responsive" src="images/portfolio/folio05.jpg" alt="">
-            <figcaption>
-              <h5>TWITTER STATUS</h5>
-              <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-            </figcaption>
-            <!-- /figcaption -->
-          </figure>
-          <!-- /figure -->
-        </div>
-        <!-- /grid-mask -->
-      </div>
-      <!-- /col -->
-
-      <!-- PORTFOLIO IMAGE 6 -->
-      <div class="col-md-4">
-        <div class="grid mask">
-          <figure>
-            <img class="img-responsive" src="images/portfolio/folio06.jpg" alt="">
-            <figcaption>
-              <h5>PHONE MOCKUP</h5>
-              <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-            </figcaption>
-            <!-- /figcaption -->
-          </figure>
-          <!-- /figure -->
-        </div>
-        <!-- /grid-mask -->
-      </div>
-      <!-- /col -->
-    </div>
-    <!-- /row -->
-    <br>
-    <br>
-  </div>
-  <!-- /row -->
 </div>
-<!-- /container -->
 
-<!-- ==== SECTION DIVIDER4 ==== -->
+<!-- ==== 招贤纳士 ==== -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 centered">
+            <himg class="img-responsive" src="images/search.png"
+                 style="width: 400px;height: 300px;margin: 0 auto;">
+        </div>
+        <div class="col-lg-4">
+            <h2>招贤纳士</h2>
+            <p>想成为我们团队的其中一员吗？</p>
+            <p><a href="mailto:contact@designx.com" class="btn btn-success">投递简历</a></p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<!-- ==== 过渡-设计是思想的碰撞 ==== -->
 <section class="section-divider textdivider divider4">
-  <div class="container">
-    <h1>DESIGN CREATES EMOTIONAL CONNECTION</h1>
-    <hr>
-    <p>There’s more to design than meets the eye. It’s when it meets the heart that design creates a meaningful, lasting connection with the audience.</p>
-  </div>
-  <!-- container -->
-</section>
-<!-- section -->
-
-<!-- ==== BLOG ==== -->
-<div class="container" id="blog" name="blog">
-  <br>
-  <div class="row">
-    <br>
-    <h1 class="centered">WE ARE STORYTELLERS</h1>
-    <hr>
-    <br>
-    <br>
-  </div>
-  <!-- /row -->
-
-  <div class="row">
-    <div class="col-lg-6 blog-bg">
-      <div class="col-lg-4 centered">
-        <br>
-        <p><img class="img img-circle" src="images/team/team04.jpg" width="60px" height="60px"></p>
-        <h4>Jaye Smith</h4>
-        <h5>Published Aug 30.</h5>
-      </div>
-      <div class="col-lg-8 blog-content">
-        <h2>We Define Success</h2>
-        <p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
-        <p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
-        <p><a href="#" class="icon icon-link"> Read More</a></p>
-        <br>
-      </div>
+    <div class="container">
+        <h1>设计是思想的碰撞</h1>
+        <hr>
+        <p>设计不仅仅是视觉方面的，当它与心灵相遇时，便和观众之间创造出一种有意义的、持久的感情联系。</p>
     </div>
-    <!-- /col -->
-
-    <div class="col-lg-6 blog-bg">
-      <div class="col-lg-4 centered">
-        <br>
-        <p><img class="img img-circle" src="images/team/team03.jpg" width="60px" height="60px"></p>
-        <h4>Michele Lampa</h4>
-        <h5>Published Aug 28.</h5>
-      </div>
-      <div class="col-lg-8 blog-content">
-        <h2>A Beautiful Story</h2>
-        <p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
-        <p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
-        <p><a href="#" class="icon icon-link"> Read More</a></p>
-        <br>
-      </div>
-    </div>
-    <!-- /col -->
-  </div>
-  <!-- /row -->
-  <br>
-  <br>
-</div>
-<!-- /container -->
-
-
-<!-- ==== SECTION DIVIDER6 ==== -->
-<section class="section-divider textdivider divider6">
-  <div class="container">
-    <h1>CRAFTED IN NEW YORK, USA.</h1>
-    <hr>
-    <p>Some Address 987,</p>
-    <p>+34 9884 4893</p>
-    <p><a class="icon icon-twitter" href="#"></a> | <a class="icon icon-facebook" href="#"></a></p>
-  </div>
-  <!-- container -->
 </section>
-<!-- section -->
 
+<!-- ==== 联系我们 ==== -->
 <div class="container" id="contact" name="contact">
-  <div class="row">
-    <br>
-    <h1 class="centered">THANKS FOR VISITING US</h1>
-    <hr>
-    <br>
-    <br>
+    <div class="row">
+        <br>
+        <h1 class="centered">想开始了吗？联系我们定制您的专属网站</h1>
+        <hr>
+        <br>
+        <br>
 
-    <div class="col-lg-8">
-      <h3>About Us</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="col-lg-8">
+            <h3>About Us</h3>
+            <p>"1024"小组里面个个都是人才，说话超好听的。</p>
+        </div>
+
+        <div class="col-lg-4">
+            <h3>联系我们</h3>
+            <p><span class="icon icon-home"></span> 广东省广州市XX区XX街道X号<br/>
+                <span class="icon icon-phone"></span> +86 020-8888 8888 <br/>
+                <span class="icon icon-envelop"></span> <a href="#"> contact@designx.com</a> <br/>
+                <span class="icon icon-twitter"></span> <a href="#"> @DesignX </a> <br/>
+                <span class="icon icon-facebook"></span> <a href="#"> DesignX </a> <br/>
+            </p>
+        </div>
+        <a href="order.html" class="btn btn-success btn-lg">提交您的需求</a><!--这里"可能"要改成Servlet路径-->
     </div>
-    <!-- col -->
-
-    <div class="col-lg-4">
-      <h3>Contact Information</h3>
-      <p><span class="icon icon-home"></span> Some Address 987, NY<br/>
-        <span class="icon icon-phone"></span> +34 9884 4893 <br/>
-        <span class="icon icon-mobile"></span> +34 59855 9853 <br/>
-        <span class="icon icon-envelop"></span> <a href="#"> example@example.com</a> <br/>
-        <span class="icon icon-twitter"></span> <a href="#"> @TemplateMag </a> <br/>
-        <span class="icon icon-facebook"></span> <a href="#"> TemplateMag </a> <br/>
-      </p>
-    </div>
-    <!-- col -->
-
-
-  </div>
-  <!-- row -->
-
 </div>
-<!-- container -->
 
-
+<!-- 版权页脚 -->
 <div id="copyrights">
-  <div class="container">
-    <p>
-      &copy; Copyrights <strong>DesignX</strong>. All Rights Reserved
-    </p>
-  </div>
+    <div class="container">
+        <p>
+            &copy; Copyrights <strong>DesignX</strong>. All Rights Reserved
+        </p>
+        <div id="allMap"></div>
+    </div>
 </div>
-<!-- / copyrights -->
 
-<script src="js/jquery/jquery.min.js"></script>
-<script src="js/bootstrap/js/bootstrap.min.js"></script>
-<script src="js/easing/easing.min.js"></script>
-<script src="js/main.js"></script>
+<script src="static-lib/jquery/jquery.min.js"></script>
+<script src="static-lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="static-lib/easing/easing.min.js"></script><!--平滑滚动道锚点链接用的JS，有兴趣可以研究，配合「smoothscroll」类使用-->
+<script src="static-lib/main.js"></script>
 </body>
 </html>
