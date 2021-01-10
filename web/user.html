@@ -54,8 +54,8 @@
         <div id="loginAndRegister" class="col-sm-12">
             <br><br><br>
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#login" data-toggle="tab" onclick="toLogin()">登录</a></li><!--a标签必须有「data-toggle="tab"」属性，否则不响应点击-->
-                <li><a href="#register" data-toggle="tab" onclick="toReg();">注册</a></li>
+                <li class="active"><a href="#login" data-toggle="tab" onclick="switchLogin()">登录</a></li><!--a标签必须有「data-toggle="tab"」属性，否则不响应点击-->
+                <li><a href="#register" data-toggle="tab" onclick="switchRegister();">注册</a></li>
             </ul>
             <div class="tab-content">
                 <!--div标签必须拥有「class="tab-pane"」属性，否则不响应点击切换效果-->
@@ -75,18 +75,18 @@
                 </div>
                 <div class="tab-pane" id="register">
                     <br><br><br>
-                    <form action="" role="form" id="regForm"><!--注册使用异步请求-->
+                    <form action="" role="form" id="regForm" onsubmit="toRegister()" method="post"><!--注册使用异步请求-->
                         <div class="form-group">
                             <label for="registerEmail"><span class="redStar">* </span>注册邮箱</label>
-                            <input type="text" class="form-control" id="registerEmail" placeholder="请输入邮箱地址" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required>
+                            <input name="userEmail" type="text" class="form-control" id="registerEmail" placeholder="请输入邮箱地址" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required>
                         </div>
                         <div class="form-group">
                             <label for="username"><span class="redStar">* </span>用户名</label>
-                            <input type="text" class="form-control" id="username" placeholder="请输入用户名，2～6字符" pattern="^[\u4e00-\u9fa5]{2,6}$" required>
+                            <input name="userName" type="text" class="form-control" id="username" placeholder="请输入用户名，2～6字符" pattern="^[\u4e00-\u9fa5]{2,6}$" required>
                         </div>
                         <div class="form-group">
                             <label for="password"><span class="redStar">* </span>密码</label>
-                            <input type="password" class="form-control" id="password" placeholder="请输入密码，6～12字符" pattern="^[\s\S]{6,12}" required>
+                            <input name="userPassword" type="password" class="form-control" id="password" placeholder="请输入密码，6～12字符" pattern="^[\s\S]{6,12}" required>
                         </div>
                         <div class="form-group">
                             <label for="confirmPassword"><span class="redStar">* </span>确认密码</label>
@@ -96,7 +96,7 @@
                             <input type="checkbox" id="agreement" required>
                             <label for="agreement"><span class="redStar">* </span>我同意并遵守<a href="#" style="text-decoration: none;">用户协议</a></label>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg">注册</button>
+                        <button type="submit" class="btn btn-primary btn-lg"/>注册</button>
                     </form>
                 </div>
             </div>
@@ -115,22 +115,29 @@
 <!-- 版权页脚 -->
 
 <script src="static-lib/jquery/jquery.min.js"></script>
+<script src="static-lib/jquery/serializejson.min.js"></script>
 <script src="static-lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="static-lib/easing/easing.min.js"></script>
 <script src="static-lib/main.js"></script>
 <script>
-    function toReg(){
+    function switchRegister(){
         $('title').text('用户注册-DesignX网站设计工作室');
     }
-    function toLogin(){
+    function switchLogin(){
         $('title').text('用户登录-DesignX网站设计工作室');
     }
-    function checkPassword(){
+    function toRegister(){
         if($("#password").val()===$("#confirmPassword").val()){
-            alert("true");
+            // alert("true");
+            var data = $("#regForm").serializeJSON();   // jQuery插件中的方法，将表单数据序列化为json
+            console.log(data);
+            $.post("userRegister.do",data,function (data,status,xhr) {  // 「userRegister.do」是接收并处理用户注册的Servlet地址
+                
+            },"json");
+            alert(data);
             return true;
         }else{
-            alert("false");
+            alert("两次输入的密码不一致！");
             return false;
         }
     }
