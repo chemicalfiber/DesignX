@@ -42,7 +42,7 @@
                 </ul>
                 <!--右边的注册和登录-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#" class="active"> 登录 / 注册</a></li>
+                    <li class="active"><a href="#contact" class="active"> 登录 / 注册</a></li>
                 </ul>
             </div>
         </div>
@@ -61,10 +61,10 @@
                 <!--div标签必须拥有「class="tab-pane"」属性，否则不响应点击切换效果-->
                 <div class="tab-pane active" id="login">
                     <br><br><br>
-                    <form action="" role="form" id="loginForm"><!--处理登录请求的Servlet-->
+                    <form action="" role="form">
                         <div class="form-group">
                             <label for="loginEmail">邮箱</label>
-                            <input type="text" class="form-control" id="loginEmail" placeholder="请输入邮箱地址"><!--这里的id和name可能需要后端重新指定-->
+                            <input type="text" class="form-control" id="loginEmail" placeholder="请输入邮箱地址">
                         </div>
                         <div class="form-group">
                             <label for="loginPassword">密码</label>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="tab-pane" id="register">
                     <br><br><br>
-                    <form action="" role="form" id="regForm"><!--注册使用异步请求-->
+                    <form action="" role="form" onsubmit="checkPassword();">
                         <div class="form-group">
                             <label for="registerEmail"><span class="redStar">* </span>注册邮箱</label>
                             <input type="text" class="form-control" id="registerEmail" placeholder="请输入邮箱地址" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required>
@@ -96,7 +96,7 @@
                             <input type="checkbox" id="agreement" required>
                             <label for="agreement"><span class="redStar">* </span>我同意并遵守<a href="#" style="text-decoration: none;">用户协议</a></label>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg">注册</button>
+                        <button type="submit" class="btn btn-primary btn-lg">注册</button>
                     </form>
                 </div>
             </div>

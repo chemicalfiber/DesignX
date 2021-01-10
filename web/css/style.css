@@ -353,7 +353,7 @@ a:before, a:after {
   font-size: 25px;
 }
 
-/* Section Dividers Backgrounds */
+/* 过渡背景 */
 
 .divider1 {
   background-image: url('../images/bg/divider1.jpg');
@@ -370,6 +370,11 @@ a:before, a:after {
 
 .divider4 {
   background-image: url('../images/bg/divider4.jpg')
+}
+
+.divider5 {
+  background-image: url('../images/desk.jpeg');
+  color: white;
 }
 
 .service-trigger {

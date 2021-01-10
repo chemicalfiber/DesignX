@@ -43,7 +43,7 @@
                 </ul>
                 <!--右边的注册和登录-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./user.html" target="_blank"> 登录 / 注册</a></li><!--这里"可能"要改成Servlet路径-->
+                    <li><a href="user.html" target="_blank"> 登录 / 注册</a></li><!--这里"可能"要改成Servlet路径-->
                 </ul>
             </div>
         </div>
