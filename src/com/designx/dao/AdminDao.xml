@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 管理员表Mapper -->    
+<mapper namespace="com.designx.dao.AdminDao" >
+	<!-- 登录,按照账号和密码查询admin用户 -->
+	<select id="findAdmin" parameterType="String" resultType="admin">
+		select * from admin 
+		where account = #{account} 
+		and adminPassword = #{password}
+		and adminStatus='1'
+	</select>
+	
+	<!-- 查询管理员列表,如果有搜索条件,则按照搜索条件查询管理员列表,如果没有搜索条件,则查询所有管理员 -->
+	<select id="findAdminList" parameterType="admin" resultType="admin">
+		select * from admin
+		<where>
+			<if test="account != null">
+			and account like concat('%',#{account},'%')
+			</if>
+			<if test="status != null">
+			and adminStatus=#{status}
+			</if>
+		</where>
+		
+		<!-- 执行分页查询,从start+1行,查询rows条 -->
+		<if test="start != null and rows != null">
+			limit #{start},#{rows}
+		</if>
+	</select>
+	<!-- 查询管理员数量,如果有搜索条件,则按照搜索条件查询到结果行数,如果没有搜索条件,则查询所有管理员用户数 -->
+	<select id="findAdminListCount" parameterType="admin" resultType="int">
+		select count(*) from admin
+		<where>
+			<if test="account != null">
+			and account like concat('%',#{account},'%')
+			</if>
+			<if test="status != null">
+			and adminStatus=#{status}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 修改管理员密码,需要传递多个不同类型的参数 -->
+	<update id="updateAdminPassword">
+		update admin set adminPassword=#{password,jdbcType=VARCHAR}
+		where adminId=#{adminId,jdbcType=INTEGER}
+		and adminPassword=#{oldPassword,jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 新增管理员 --> 
+	<insert id="addAdmin" parameterType="admin">
+		insert into admin(account,adminPassword,adminName,adminemail,adminStatus)
+		values(#{account},#{password},#{username},#{email},#{status})
+	</insert>
+	
+	<!-- 删除管理员 -->
+	<delete id="deleteAdmin" parameterType="int">
+		delete from admin where adminId=#{adminId}
+	</delete>
+	
+	<!-- 通过id查询管理员 -->
+	<select id="findAdminById" parameterType="int" resultType="admin">
+		select * from admin where adminId = #{adminId}
+	</select>
+	
+	<!-- 修改管理员信息 -->
+	<update id="updateAdmin" parameterType="admin">
+		<if test="adminId != null">
+			update admin
+			<set>
+				<if test="password !=null and password !='' ">adminPassword=#{password},</if>
+				<if test="username !=null ">adminName=#{username},</if>
+				<if test="email != null "> adminEmail=#{email},</if>
+				<if test="status != null ">adminStatus=#{status},</if>
+			</set>
+			where adminId=#{adminId}
+		</if>
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
