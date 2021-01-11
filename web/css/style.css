@@ -365,7 +365,7 @@ a:before, a:after {
 
 .divider3 {
   background-image: url('../images/bg/divider3.jpg');
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .divider4 {
@@ -374,6 +374,12 @@ a:before, a:after {
 
 .divider5 {
   background-image: url('../images/desk.jpeg');
+  color: white;
+}
+
+.divider6 {
+  background-image: url('../images/paper.jpg');
+  opacity: 80%;
   color: white;
 }
 

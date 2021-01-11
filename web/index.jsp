@@ -21,6 +21,16 @@
     <link href="static-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="static-lib/icomoon/icomoon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        #slideshow{
+            height: 300px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        #slideshow img{
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-offset="58" data-target="#navbar-main">
@@ -43,7 +53,7 @@
                 </ul>
                 <!--右边的注册和登录-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="user.html" target="_blank"> 登录 / 注册</a></li><!--这里"可能"要改成Servlet路径-->
+                    <li><a href="user.html"> 登录 / 注册</a></li><!--这里"可能"要改成Servlet路径-->
                 </ul>
             </div>
         </div>
@@ -139,12 +149,45 @@
 
 <!-- ==== 轮播图，此处的图片是静态的，后端不必担心 ==== -->
 <div class="container" id="Carousel" name="Carousel">
-    <div class="row" style="height: 400px;">
+    <div class="row">
         <br>
         <h1 class="centered">还有这些...</h1>
         <hr>
-
         <!--等待实现的轮播图代码-->
+        <div id="slideshow" class="carousel slide" data-ride="carousel" data-interval="3000">   <!--ID随你定，类必须是「carousel」--><!--「data-interval="1000"」是定时器，单位是毫秒-->
+            <ol class="carousel-indicators"><!--设置图片轮播顺序，这个是轮播计数器-->
+                <li class="active" data-target="#slideshow" data-slide-to="0"></li>
+                <li data-target="#slideshow" data-slide-to="1"></li>
+                <li data-target="#slideshow" data-slide-to="2"></li>
+            </ol>
+            <!--设置轮播图片-->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="#"><img src="./images/portfolio/folio03.jpg" alt=""></a>
+                    <div class="carousel-caption">
+                        <h3>图片标题1</h3>
+                        <p>图片描述1</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./images/portfolio/folio04.jpg" alt=""></a>
+                    <div class="carousel-caption">
+                        <h3>图片标题2</h3>
+                        <p>图片描述2</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./images/portfolio/folio05.jpg" alt=""></a>
+                    <div class="carousel-caption">
+                        <h3>图片标题3</h3>
+                        <p>图片描述3</p>
+                    </div>
+                </div>
+            </div>
+            <!--设置图片轮播控制器，即左右切换按钮-->
+            <a href="#slideshow" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a href="#slideshow" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
     </div>
 </div>
 
@@ -207,7 +250,7 @@
             <a href="#" class="icon icon-twitter"></a>
             <a href="#" class="icon icon-facebook"></a>
             <a href="https://github.com/chemicalfiber" class="icon icon-github" target="_blank"></a>
-            <p>项目小组组长，前端页面设计</p>
+            <p>项目小组组长<br>前端页面设计</p>
         </div>
 
         <div class="col-lg-2 centered">
@@ -237,7 +280,7 @@
             <a href="#" class="icon icon-twitter"></a>
             <a href="#" class="icon icon-facebook"></a>
             <a href="https://github.com/sanqi0813" class="icon icon-github" target="_blank"></a>
-            <p>后端功能实现</p>
+            <p>前端页面功能实现<br>后端功能实现</p>
         </div>
 
         <div class="col-lg-2 centered">
@@ -300,6 +343,7 @@
         <div class="col-lg-8">
             <h3>About Us</h3>
             <p>"1024"小组里面个个都是人才，说话超好听的。</p>
+            <a href="order.html" class="btn btn-success btn-lg">提交您的需求</a><!--这里"可能"要改成Servlet路径-->
         </div>
 
         <div class="col-lg-4">
@@ -311,7 +355,6 @@
                 <span class="icon icon-facebook"></span> <a href="#"> DesignX </a> <br/>
             </p>
         </div>
-        <a href="order.html" class="btn btn-success btn-lg">提交您的需求</a><!--这里"可能"要改成Servlet路径-->
     </div>
 </div>
 

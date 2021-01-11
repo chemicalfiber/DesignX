@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>用户登录-DesignX网站设计工作室</title>
+    <title>个人中心-DesignX网站设计工作室</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <!-- 网站图标 -->
     <link href="images/favicon.png" rel="icon">
@@ -42,65 +42,65 @@
                 </ul>
                 <!--右边的注册和登录-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#contact" class="active"> 登录 / 注册</a></li>
+                    <li><a href="#" class="active">退出</a></li><!--处理退出登录的Servlet-->
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<section class="section-divider divider5">
+<section class="section-divider divider6">
     <div class="container">
-        <div id="loginAndRegister" class="col-sm-12">
-            <br><br><br>
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#login" data-toggle="tab" onclick="toLogin()">登录</a></li><!--a标签必须有「data-toggle="tab"」属性，否则不响应点击-->
-                <li><a href="#register" data-toggle="tab" onclick="toReg();">注册</a></li>
-            </ul>
-            <div class="tab-content">
-                <!--div标签必须拥有「class="tab-pane"」属性，否则不响应点击切换效果-->
-                <div class="tab-pane active" id="login">
-                    <br><br><br>
-                    <form action="" role="form">
-                        <div class="form-group">
-                            <label for="loginEmail">邮箱</label>
-                            <input type="text" class="form-control" id="loginEmail" placeholder="请输入邮箱地址">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">密码</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="请输入密码">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">登录</button>
-                    </form>
-                </div>
-                <div class="tab-pane" id="register">
-                    <br><br><br>
-                    <form action="" role="form" onsubmit="checkPassword();">
-                        <div class="form-group">
-                            <label for="registerEmail"><span class="redStar">* </span>注册邮箱</label>
-                            <input type="text" class="form-control" id="registerEmail" placeholder="请输入邮箱地址" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="username"><span class="redStar">* </span>用户名</label>
-                            <input type="text" class="form-control" id="username" placeholder="请输入用户名，2～6字符" pattern="^[\u4e00-\u9fa5]{2,6}$" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password"><span class="redStar">* </span>密码</label>
-                            <input type="password" class="form-control" id="password" placeholder="请输入密码，6～12字符" pattern="^[\s\S]{6,12}" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmPassword"><span class="redStar">* </span>确认密码</label>
-                            <input type="password" class="form-control" id="confirmPassword" placeholder="请确认输入的密码" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="agreement" required>
-                            <label for="agreement"><span class="redStar">* </span>我同意并遵守<a href="#" style="text-decoration: none;">用户协议</a></label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">注册</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+<!--        <div id="loginAndRegister" class="col-sm-12">-->
+<!--            <br><br><br>-->
+<!--            <ul class="nav nav-tabs">-->
+<!--                <li class="active"><a href="#login" data-toggle="tab" onclick="toLogin()">登录</a></li>&lt;!&ndash;a标签必须有「data-toggle="tab"」属性，否则不响应点击&ndash;&gt;-->
+<!--                <li><a href="#register" data-toggle="tab" onclick="toReg();">注册</a></li>-->
+<!--            </ul>-->
+<!--            <div class="tab-content">-->
+<!--                &lt;!&ndash;div标签必须拥有「class="tab-pane"」属性，否则不响应点击切换效果&ndash;&gt;-->
+<!--                <div class="tab-pane active" id="login">-->
+<!--                    <br><br><br>-->
+<!--                    <form action="" role="form">-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="loginEmail">邮箱</label>-->
+<!--                            <input type="text" class="form-control" id="loginEmail" placeholder="请输入邮箱地址">-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="loginPassword">密码</label>-->
+<!--                            <input type="password" class="form-control" id="loginPassword" placeholder="请输入密码">-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="btn btn-primary btn-lg">登录</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--                <div class="tab-pane" id="register">-->
+<!--                    <br><br><br>-->
+<!--                    <form action="" role="form" onsubmit="checkPassword();">-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="registerEmail"><span class="redStar">* </span>注册邮箱</label>-->
+<!--                            <input type="text" class="form-control" id="registerEmail" placeholder="请输入邮箱地址" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="username"><span class="redStar">* </span>用户名</label>-->
+<!--                            <input type="text" class="form-control" id="username" placeholder="请输入用户名，2～6字符" pattern="^[\u4e00-\u9fa5]{2,6}$" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="password"><span class="redStar">* </span>密码</label>-->
+<!--                            <input type="password" class="form-control" id="password" placeholder="请输入密码，6～12字符" pattern="^[\s\S]{6,12}" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="confirmPassword"><span class="redStar">* </span>确认密码</label>-->
+<!--                            <input type="password" class="form-control" id="confirmPassword" placeholder="请确认输入的密码" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <input type="checkbox" id="agreement" required>-->
+<!--                            <label for="agreement"><span class="redStar">* </span>我同意并遵守<a href="#" style="text-decoration: none;">用户协议</a></label>-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="btn btn-primary btn-lg">注册</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
 
