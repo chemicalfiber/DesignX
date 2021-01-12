@@ -11,6 +11,6 @@
 	</settings>
 	<!-- 自动扫描po并定义别名 -->
 	<typeAliases>
-		<package name="com.designx.po" />
+		<package name="com.gdkm.po" />
 	</typeAliases>
 </configuration>

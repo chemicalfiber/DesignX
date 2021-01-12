@@ -96,7 +96,7 @@
                             <input type="checkbox" id="agreement" required>
                             <label for="agreement"><span class="redStar">* </span>我同意并遵守<a href="#" style="text-decoration: none;">用户协议</a></label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg">注册</button>
+                        <button type="submit" class="btn btn-primary btn-lg"/>注册</button>
                     </form>
                 </div>
             </div>
@@ -132,7 +132,7 @@
             var data = $("#regForm").serializeJSON();   // jQuery插件中的方法，将表单数据序列化为json
             console.log(data);
             $.post("userRegister.do",data,function (data,status,xhr) {  // 「userRegister.do」是接收并处理用户注册的Servlet地址
-                
+
             },"json");
             alert(data);
             return true;

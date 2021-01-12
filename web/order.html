@@ -14,18 +14,6 @@
     <link href="static-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="static-lib/icomoon/icomoon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        h1{
-            color: white;
-            margin-bottom: 10px;
-        }
-        .redStar {
-            color: red
-        }
-        #position{
-            color: black;
-        }
-    </style>
 </head>
 
 <body data-spy="scroll" data-offset="58" data-target="#navbar-main">
@@ -46,29 +34,26 @@
         </div>
     </div>
 </div>
-<section class="section-divider divider6">
-    <div style="height: 650px;">
-        <h1><b>需求提交</b></h1>
-        <div class="container" style="margin-top: 50px; text-align: left">
-            <form action="" role="form">
-                <div class="form-group">
-                    <label for="name"><span class="redStar">* </span>需求名称：</label>
-                    <input type="text" class="form-control" id="name" placeholder="请输入需求" required>
-                </div>
-                <div class="form-group">
-                    <label for="content"><span class="redStar">* </span>需求内容：</label>
-                    <textarea type="text" class="form-control" id="content" placeholder="请输入需求内容" style="resize: none" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="inputFile">预先设计好的概念图（可选）：</label>
-                    <input type="file" id="inputFile">
-                </div>
-                <div id="position" class="icon icon-earth" style="margin-bottom: 20px;">正在获取您的位置</div>
-                <button type="submit" class="btn btn-primary">提交</button>
-            </form>
-        </div>
+
+<div style="height: 900px;">
+    <div class="container" style="margin-top: 80px;">
+        <form action="" role="form">
+            <div class="form-group">
+                <label for="name">名称</label>
+                <input type="text" class="form-control" id="name" placeholder="请输入需求">
+            </div>
+            <div class="form-group">
+                <label for="content">内容</label>
+                <input type="text" class="form-control" id="content" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <label for="inputfile">预先设计好的概念图（可选）：</label>
+                <input type="file" id="inputfile">
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
     </div>
-</section>
+</div>
 <div id="locatedInfo"></div>
 
 <div id="copyrights">
@@ -89,17 +74,18 @@
 
 <script src="http://api.map.baidu.com/api?v=2.0&ak=0A5bc3c4fb543c8f9bc54b77bc155724"></script>
 <script>
-    function getMyPosition() {
-        if (window.navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(success, failed);
-        } else {
+    function getMyPosition(){
+        if(window.navigator.geolocation){
+            alert("正在获取您的位置...");
+            navigator.geolocation.getCurrentPosition(success,failed);
+        }else{
             alert("当前浏览器不支持GeoLocation！")
         }
     }
-
-    function success(p) {
+    function success(p){
         var jd = p.coords.longitude;	// 经度
         var wd = p.coords.latitude;		// 纬度
+        alert(jd + " , " + wd);
         // 百度地图API功能
         var map = new BMap.Map("allMap");
         var point = new BMap.Point(jd, wd);
@@ -107,15 +93,11 @@
         gc.getLocation(point, function (rs) {
             var addComp = rs.addressComponents;
             //alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
-            $("#position").html("  我们将会尽快安排<strong>" + addComp.province + " " + addComp.city + "</strong>的工程师与您会面洽谈");
-
         });
     }
-
-    function failed() {
+    function failed(){
         alert("获取位置失败！");
     }
-
     getMyPosition();
 </script>
 </body>
