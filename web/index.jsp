@@ -139,12 +139,42 @@
 
 <!-- ==== 轮播图，此处的图片是静态的，后端不必担心 ==== -->
 <div class="container" id="Carousel" name="Carousel">
-    <div class="row" style="height: 400px;">
+    <div class="row">
         <br>
         <h1 class="centered">还有这些...</h1>
         <hr>
-
         <!--等待实现的轮播图代码-->
+        <div id="slideshow" class="carousel slide" data-ride="carousel" data-interval="3000">   <!--ID随你定，类必须是「carousel」--><!--「data-interval="1000"」是定时器，单位是毫秒-->
+            <ol class="carousel-indicators"><!--设置图片轮播顺序，这个是轮播计数器-->
+                <li class="active" data-target="#slideshow" data-slide-to="0"></li>
+                <li data-target="#slideshow" data-slide-to="1"></li>
+                <li data-target="#slideshow" data-slide-to="2"></li>
+            </ol>
+            <!--设置轮播图片-->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href=" "><img src="./images/slide/01.png" alt=""></a >
+                    <div class="carousel-caption">
+                        <p>光伏发电论坛</p >
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./images/slide/02.png" alt=""></a >
+                    <div class="carousel-caption">
+                        <p>时尚网站</p >
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./images/slide/03.png" alt=""></a >mos
+                    <div class="carousel-caption">
+                        <p>生物燃料转化体系宣传</p >
+                    </div>
+                </div>
+            </div>
+            <!--设置图片轮播控制器，即左右切换按钮-->
+            <a href="#slideshow" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a >
+            <a href="#slideshow" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a >
+        </div>
     </div>
 </div>
 
