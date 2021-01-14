@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <title>DesignX网站设计工作室</title>
@@ -105,10 +105,10 @@
             <div class="col-md-5">
                 <div class="grid mask">
                     <figure>
-                        <img class="img-responsive" src="images/portfolio/folio01.jpg" alt=""><!--在href处书写查询到的第一张图片的地址代码-->
+                        <img class="img-responsive" src="images/portfolio/designx.jpg" alt=""><!--在href处书写查询到的第一张图片的地址代码-->
                         <figcaption>
-                            <h5>DASHBOARD</h5><!--在此书写查询到的第一个作品标题代码-->
-                            <a href="#" class="btn btn-primary btn-lg">查看</a><!-- 在href处书写查询到的第一个作品地址代码 -->
+                            <h5>DesignX</h5><!--在此书写查询到的第一个作品标题代码-->
+                            <a href="./designx-open-source.html" class="btn btn-primary btn-lg">查看</a><!-- 在href处书写查询到的第一个作品地址代码 -->
                         </figcaption>
                     </figure>
                 </div>
@@ -120,8 +120,8 @@
                     <figure>
                         <img class="img-responsive" src="images/portfolio/folio02.jpg" alt=""><!--在href处书写查询到的第二张图片的地址代码-->
                         <figcaption>
-                            <h5>UI DESIGN</h5><!--在此书写查询到的第二个作品标题代码-->
-                            <a href="#" class="btn btn-primary btn-lg">查看</a><!-- 在href处书写查询到的第二个作品地址代码 -->
+                            <h5>个人简历设计</h5><!--在此书写查询到的第二个作品标题代码-->
+                            <a href="" class="btn btn-primary btn-lg">查看</a><!-- 在href处书写查询到的第二个作品地址代码 -->
                         </figcaption>
                     </figure>
                 </div>
@@ -132,12 +132,42 @@
 
 <!-- ==== 轮播图，此处的图片是静态的，后端不必担心 ==== -->
 <div class="container" id="Carousel" name="Carousel">
-    <div class="row" style="height: 400px;">
+    <div class="row">
         <br>
         <h1 class="centered">还有这些...</h1>
         <hr>
-
         <!--等待实现的轮播图代码-->
+        <div id="slideshow" class="carousel slide" data-ride="carousel" data-interval="3000">   <!--ID随你定，类必须是「carousel」--><!--「data-interval="1000"」是定时器，单位是毫秒-->
+            <ol class="carousel-indicators"><!--设置图片轮播顺序，这个是轮播计数器-->
+                <li class="active" data-target="#slideshow" data-slide-to="0"></li>
+                <li data-target="#slideshow" data-slide-to="1"></li>
+                <li data-target="#slideshow" data-slide-to="2"></li>
+            </ol>
+            <!--设置轮播图片-->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href=" "><img src="./images/slide/01.png" alt=""></a >
+                    <div class="carousel-caption">
+                        <p>光伏发电论坛</p >
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./images/slide/02.png" alt=""></a >
+                    <div class="carousel-caption">
+                        <p>时尚穿搭速配网站</p >
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./images/slide/03.png" alt=""></a >
+                    <div class="carousel-caption">
+                        <p>生物燃料转化体系宣传</p >
+                    </div>
+                </div>
+            </div>
+            <!--设置图片轮播控制器，即左右切换按钮-->
+            <a href="#slideshow" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a >
+            <a href="#slideshow" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a >
+        </div>
     </div>
 </div>
 
@@ -197,8 +227,8 @@
             <img class="img img-circle" src="images/team/chemicalfiber.jpg" height="120px" width="120px" alt="">
             <br>
             <h4><b>chemicalfiber</b></h4>
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
+            <a href="" class="icon icon-twitter"></a>
+            <a href="" class="icon icon-facebook"></a>
             <a href="https://github.com/chemicalfiber" class="icon icon-github" target="_blank"></a>
             <p>项目小组组长<br>前端页面设计</p>
         </div>
@@ -207,8 +237,8 @@
             <img class="img img-circle" src="images/team/extreme-sh.jpeg" height="120px" width="120px" alt="">
             <br>
             <h4><b>Extreme-SH</b></h4>
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
+            <a href="" class="icon icon-twitter"></a>
+            <a href="" class="icon icon-facebook"></a>
             <a href="https://github.com/Extreme-SH" class="icon icon-github" target="_blank"></a>
             <p>后端功能设计</p>
         </div>
@@ -217,8 +247,8 @@
             <img class="img img-circle" src="images/team/miss-ice.jpeg" height="120px" width="120px" alt="">
             <br>
             <h4><b>Miss-ice0901</b></h4>
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
+            <a href="" class="icon icon-twitter"></a>
+            <a href="" class="icon icon-facebook"></a>
             <a href="https://github.com/Miss-ice0901" class="icon icon-github" target="_blank"></a>
             <p>数据库设计</p>
         </div>
@@ -227,8 +257,8 @@
             <img class="img img-circle" src="images/team/sanqi0813.jpeg" height="120px" width="120px" alt="">
             <br>
             <h4><b>sanqi0813</b></h4>
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
+            <a href="" class="icon icon-twitter"></a>
+            <a href="" class="icon icon-facebook"></a>
             <a href="https://github.com/sanqi0813" class="icon icon-github" target="_blank"></a>
             <p>后端功能实现</p>
         </div>
@@ -237,8 +267,8 @@
             <img class="img img-circle" src="images/team/shadow01.png" height="120px" width="120px" alt="">
             <br>
             <h4><b>Shadow-01</b></h4>
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
+            <a href="" class="icon icon-twitter"></a>
+            <a href="" class="icon icon-facebook"></a>
             <a href="https://github.com/1124925841" class="icon icon-github" target="_blank"></a>
             <p>后端功能实现</p>
         </div>
@@ -247,8 +277,8 @@
             <img class="img img-circle" src="images/team/zerozeroSeven.jpeg" height="120px" width="120px" alt="">
             <br>
             <h4><b>zerozeroSeven007</b></h4>
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
+            <a href="" class="icon icon-twitter"></a>
+            <a href="" class="icon icon-facebook"></a>
             <a href="https://github.com/zerozeroSeven007" class="icon icon-github" target="_blank"></a>
             <p>数据库设计</p>
         </div>

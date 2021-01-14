@@ -166,7 +166,6 @@
                 </div>
                 <div class="item">
                     <a href="#"><img src="./images/slide/03.png" alt=""></a >mos
-
                     <div class="carousel-caption">
                         <p>生物燃料转化体系宣传</p >
                     </div>

@@ -1,0 +1,32 @@
+使用jsp程序上传的使用方法:
+
+0、设置kindEditorready.js中“uploadJson”的属性为下，该属性的值代表上传图片时候调用的jsp上传程序
+//upload_json.jsp是上传文件程序,此处的路径需要依据你的网页编辑器editior所在页面的目录位置进行设置调用路径uploadJson的值
+ uploadJson : '../../js/editor/jsp/upload_json.jsp', 
+
+1、将kindeditor/jsp/lib目录下的3个jar文件复制到lib目录下，并重新启动Tomcat。
+	* commons-fileupload-1.2.1.jar
+	* commons-io-1.4.jar
+	* json_simple-1.1.jar
+
+
+2、在页面载入kindEditorReady.js文件
+
+3、更改文件editor/jsp/upload_json.jsp，upload_json.jsp页面负责上传图片，修改此文件中的上传目录为upload
+
+将源文件中
+//文件保存目录路径
+String savePath = pageContext.getServletContext().getRealPath("/") + "attached/";
+
+//文件保存目录URL
+String saveUrl  = request.getContextPath() + "/attached/";
+
+修改为
+
+//文件保存目录路径
+String savePath = pageContext.getServletContext().getRealPath("/") + "upload/";
+
+//文件保存目录URL
+String saveUrl  = request.getContextPath() + "/upload/";
+
+4、在 upload下面新建 image文件夹 ，网页编辑器中上传的图片将 保存 到 uplaod/image文件夹下

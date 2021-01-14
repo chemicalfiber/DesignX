@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gdkm.dao.NewsDao">
+    <!-- 新增新闻 -->
+    <insert id="addNews" parameterType="news">
+       insert into news(newsColumnId,title,message,account,num,createTime,pic,appendix,video)
+       values(#{newsColumn.newsColumnId},#{title},#{message},#{account},
+             #{num},#{createTime},#{pic},#{appendix},#{video})
+    </insert>
+    
+    <!-- 新闻与栏目一对一关联 -->
+    <resultMap type="com.gdkm.po.News" id="newsInfoMap">
+            <id column="newsId" property="newsId" />
+            <result property="title" column="title"/>
+            <result property="message" column="message"/>  
+            <result property="account" column="account"/>  
+            <result property="num" column="num"/>  
+            <result property="createTime" column="createTime"/>  
+            <result property="pic" column="pic"/>  
+            <result property="appendix" column="appendix"/>  
+            <result property="video" column="video"/>      
+           <association property="newsColumn" javaType="com.gdkm.po.NewsColumn">
+                   <id column="newsColumnId" property="newsColumnId" />
+                   <result property="columnName" column="columnName"/>
+           </association>
+    </resultMap>
+    <!-- 查询新闻列表，如果有搜索条件，则按照搜索条件查询新闻 -->
+    <select id="findNewsList" parameterType="news" resultMap="newsInfoMap">
+       select n.*,nc.columnName from news n, newsColumn nc
+       <where>
+          n.newsColumnId = nc.newsColumnId
+          <if test="title !=null">
+          and title like concat('%',#{title},'%')
+          </if>
+           <if test="newsColumn !=null">
+          and n.newsColumnId=#{newsColumn.newsColumnId}
+          </if>
+       </where>
+       order by createTime desc
+       <if test="start !=null and rows !=null">
+          limit #{start},#{rows}
+       </if>
+    </select>
+    <!-- 查询新闻数量，如果有搜索条件，则按照搜索条件查询新闻数量 -->
+     <select id="findNewsListCount" parameterType="news" resultType="int">
+        select count(*) from news
+        <where>
+              <if test="title !=null">
+              and title like concat('%',#{title},'%')
+              </if>
+              <if test="newsColumn !=null">
+              and  newsColumnId=#{newsColumn.newsColumnId}
+              </if>
+        </where>
+    </select>
+    <!-- 通过id查询新闻 -->
+    <select id="findNewsById" parameterType="int" resultMap="newsInfoMap">
+       select n.*,nc.columnName from news n, newsColumn nc
+       where n.newsColumnId = nc.newsColumnId and newsId = 	#{newsId}
+    </select>
+    
+    <!-- 删除新闻 -->
+    <delete id="deleteNews" parameterType="int">
+        delete from news where newsId=#{newsId}
+     
+    </delete>
+    
+    <!-- 查询图片新闻列表 -->
+    <select id="findNewsListByPic" resultMap="newsInfoMap">
+         select n.*,nc.columnName from news n, newsColumn nc
+         where n.newsColumnId = nc.newsColumnId
+         and pic is not null and trim(pic)!=''
+         order by createTime desc
+         limit 2
+    </select>
+    
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+    <!-- 新闻栏目表Mapper -->
+    <mapper namespace="com.gdkm.dao.NewsColumnDao">
+       <!-- 查询所有新闻栏目 -->
+      <select id="findAllNewsColumn" resultType="newsColumn">
+         select * from newsColumn
+      </select>
+      <!-- 通过id查询新闻栏目 -->
+      <select id="findNewsColumnById" parameterType="int" resultType="newsColumn">
+        select * from newsColumn
+        where newsColumnId = #{newsColumnId}
+      </select>
+    
+    </mapper>
+    

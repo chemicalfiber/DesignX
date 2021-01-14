@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <title>作品列表-DesignX网站设计工作室</title>
@@ -14,6 +14,29 @@
     <link href="static-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="static-lib/icomoon/icomoon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .media{
+            margin-bottom: 20px;
+        }
+        h2{
+            border-bottom: #8c8c8c solid 1px;
+        }
+        @media (min-width: 650px) {
+            img{
+                width: 300px;
+                height: 200px;
+            }
+        }
+        @media (max-width: 649px) {
+            img{
+                width: 150px;
+                height: 100px;
+            }
+        }
+        a>h2:hover{
+            color: #a4003a;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-offset="58" data-target="#navbar-main">
@@ -21,11 +44,6 @@
     <!-- 固定不动的导航栏 -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon icon-menu" style="font-size:30px; color: #ffffff"></span>
-                </button>
-            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="./index.html">回到首页</a></li>
@@ -39,9 +57,36 @@
     </div>
 </div>
 
-<div class="container" style="height: 850px;">
+<div class="container">
     <br><br><br>
-    <div>这里显示作品列表</div>
+    <div class="media">
+        <a href="designx-open-source.html" class="media-left"><img src="./images/portfolio/designx.jpg" alt=""></a>
+        <div class="media-body">
+            <a href="designx-open-source.html"><h2>DesignX现已开源！</h2></a>
+            集6位工程师的辛勤汗水的「DesignX网站设计工作室项目」现已开源！<br>我们热爱开源，We love Open Source！<br>我们都是开源项目的受益者，感谢开源，成就了更好的我们。现在，我们以同样优秀的作品回馈开源社区。
+        </div>
+    </div>
+    <div class="media">
+        <a href="#" class="media-left"><img src="./images/portfolio/folio02.jpg" alt=""></a>
+        <div class="media-body">
+            <a href="#"><h2>设计你的电子个人简历</h2></a>
+            个人简历在求职的过程中起到“敲门砖”的作用。而一份容易引起HR注意力的简历，会让你受到关注的几率大幅度上升。想拥有更炫酷的个人简历吗？不妨进来学习一下吧！
+        </div>
+    </div>
+    <div class="media">
+        <a href="#" class="media-left"><img src="./images/portfolio/folio09.jpg" alt=""></a>
+        <div class="media-body">
+            <a href="#"><h2>Google Material Design在实际网页中的应用</h2></a>
+            谷歌表示，Material Design旨在为手机、平板电脑、台式机和“其他平台”提供更一致、更广泛的“外观和感觉”。但我们发现其不仅仅能应用于终端程序，在网页设计中它也有着出色的表现......
+        </div>
+    </div>
+    <div class="media">
+        <a href="#" class="media-left"><img src="./images/portfolio/folio08.jpg" alt=""></a>
+        <div class="media-body">
+            <a href="#"><h2>卡片设计布局让你的网页布局更友好</h2></a>
+            卡片式设计与用户体验：不管是Web应用，还是移动应用，页面设计都不能脱离了真实，「卡片」是新的创造性概念，它能更自然地反应每个元素之间的关系。
+        </div>
+    </div>
 </div>
 
 <div id="copyrights">
@@ -58,13 +103,6 @@
 <script src="static-lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="static-lib/easing/easing.min.js"></script>
 <script src="static-lib/main.js"></script>
-<script>
-    function toReg(){
-        $('title').text('用户注册-DesignX网站设计工作室');
-    }
-    function toLogin(){
-        $('title').text('用户登录-DesignX网站设计工作室');
-    }
-</script>
+
 </body>
 </html>
