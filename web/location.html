@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>我们的位置-DesignX网站设计工作室</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- 网站图标 -->
+    <link href="images/favicon.png" rel="icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google字体引用 -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:Lato:300,400,700,300italic,400italic|Raleway:400,300,700"
+          rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="static-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static-lib/icomoon/icomoon.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=0A5bc3c4fb543c8f9bc54b77bc155724"></script>
+    <style>
+        #map{
+            width:700px;
+            height:550px;
+            border:#ccc solid 1px;
+            font-size:12px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-offset="58" data-target="#navbar-main">
+<div id="navbar-main">
+    <!-- 固定不动的导航栏 -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html">回到首页</a></li>
+                </ul>
+                <!--右边的注册和登录-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="user.html" class="active"> 登录 / 注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <br><br><br>
+    <!--百度地图容器-->
+    <div id="map"></div>
+</div>
+
+<div id="copyrights">
+    <div class="container">
+        <p>
+            &copy; Copyrights <strong>DesignX</strong>. All Rights Reserved
+        </p>
+        <div id="allMap"></div>
+    </div>
+</div>
+<!-- 版权页脚 -->
+
+<script src="static-lib/jquery/jquery.min.js"></script>
+<script src="static-lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="static-lib/easing/easing.min.js"></script>
+<script src="static-lib/main.js"></script>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap() {
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMapOverlay();//向地图添加覆盖物
+    }
+
+    function createMap() {
+        map = new BMap.Map("map");
+        map.centerAndZoom(new BMap.Point(113.269219, 23.137467), 19);   // 初始化地图中心点
+    }
+
+    function setMapEvent() {
+        map.enableScrollWheelZoom();    // 允许滚轮缩放
+        map.enableKeyboard();           // 允许键盘操控
+        map.enableDragging();           // 可以拖动
+        map.enableDoubleClickZoom();    // 允许双击
+    }
+
+    function addClickHandler(target, window) {
+        target.addEventListener("click", function () {
+            target.openInfoWindow(window);
+        });
+    }
+
+    function addMapOverlay() {
+        var markers = [
+            {
+                content: "",
+                title: "我们的位置",
+                imageOffset: {width: 0, height: 3},
+                position: {lat: 23.137413, lng: 113.269048}
+            }
+        ];
+        for (var index = 0; index < markers.length; index++) {
+            var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+            var marker = new BMap.Marker(point, {
+                icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+                    imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                })
+            });
+            var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5)});
+            var opts = {
+                width: 200,
+                title: markers[index].title,
+                enableMessage: false
+            };
+            var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+            marker.setLabel(label);
+            addClickHandler(marker, infoWindow);
+            map.addOverlay(marker);
+        }
+    }
+
+    //向地图添加控件
+    function addMapControl() {
+        var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
+        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+        map.addControl(scaleControl);
+        var navControl = new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            type: BMAP_NAVIGATION_CONTROL_LARGE
+        });
+        map.addControl(navControl);
+        var overviewControl = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true});
+        map.addControl(overviewControl);
+    }
+    // var map;
+    initMap();
+</script>
+</body>
+</html>

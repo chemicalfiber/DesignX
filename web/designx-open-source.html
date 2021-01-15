@@ -33,13 +33,18 @@
     <!-- 固定不动的导航栏 -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-menu" style="font-size:30px; color:#ffffff;"></span><!--汉堡菜单小图标-->
+                </button>
+            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="./index.html">回到首页</a></li>
                 </ul>
                 <!--右边的注册和登录-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="user.html" class="active"> 登录 / 注册</a></li>
+                    <li><a href="./user.html"> 登录 / 注册</a></li><!--这里"可能"要改成Servlet路径-->
                 </ul>
             </div>
         </div>
